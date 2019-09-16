@@ -11,16 +11,19 @@ class App < Sinatra::Base
     post '/teams' do
         @team = Team.new(name: params[:team][:name], motto: params[:team][:motto])
         members = params[:team][:members]
-        
+        # binding.pry
         @superheroes = members.map do |member|
-            Superhero.new(name: member[:superhero][:name], power: member[:superhero][:power], bio: member[:superhero][:bio])
+            SuperHero.new(name: member[:name], power: member[:power], bio: member[:bio])
         end
-        # params[:team][:superheroes].each do |superhero|
-        #     SuperHero.new(superhero)
-        # end
-
-        # @superheroes = SuperHero.all
 
         erb :team
     end
 end
+
+       
+
+        # params[:team][:members].each do |member|
+        #     SuperHero.new(member)
+        # end
+
+        # @superheroes = SuperHero.all
