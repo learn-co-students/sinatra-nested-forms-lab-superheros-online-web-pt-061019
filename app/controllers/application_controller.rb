@@ -12,6 +12,9 @@ class App < Sinatra::Base
         @team = Team.new(name: params[:team][:name], motto: params[:team][:motto])
         members = params[:team][:members]
         
+        @superheroes = members.map do |member|
+            Superhero.new(name: member[:superhero][:name], power: member[:superhero][:power], bio: member[:superhero][:bio])
+        end
         # params[:team][:superheroes].each do |superhero|
         #     SuperHero.new(superhero)
         # end
