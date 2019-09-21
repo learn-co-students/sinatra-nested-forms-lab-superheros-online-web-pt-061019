@@ -1,10 +1,11 @@
 class Hero
-    attr_reader :power, :biography
+    attr_reader :power, :bio, :name
     @@heroes = []
 
-    def initialize(details)
-        @name =  details[:power]
-        @height = details[:biography]
+    def initialize(params)
+        @power =  params[:power]
+        @bio = params[:bio]
+        @name = params[:name]
         @@heroes << self
     end
 
