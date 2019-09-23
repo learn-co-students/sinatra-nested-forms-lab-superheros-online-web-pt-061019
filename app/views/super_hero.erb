@@ -1,1 +1,59 @@
+<h1>Create a Team and Heroes!</h1>
 
+<form action="/team" method="post">
+    <p>Team Name: <input type="text" name="team[team_name]" id="team[name]"></p>
+    <p>Team Motto: <input type="text" name="team[team_motto]" id="team[motto]"></p>
+    <h2>Hero 1:</h2>
+    <p>Hero Name: <input type="text" name="team[heroes][][name]" id="member1_name"></p>
+    <p>Hero Power: <input type="text" name="team[heroes][][power]" id="member1_power"></p>
+    <p>Hero Biography: <input type="text" name="team[heroes][][bio]" id="member1_bio"></p>
+    <h2>Hero 2:</h2>
+    <p>Hero Name: <input type="text" name="team[heroes][][name]" id="member2_name"></p>
+    <p>Hero Power: <input type="text" name="team[heroes][][power]" id="member2_power"></p>
+    <p>Hero Biography: <input type="text" name="team[heroes][][bio]" id="member2_bio"></p>
+    <h2>Hero 3:</h2>
+    <p>Hero Name: <input type="text" name="team[heroes][][name]" id="member3_name"></p>
+    <p>Hero Power: <input type="text" name="team[heroes][][power]" id="member3_power"></p>
+    <p>Hero Biography: <input type="text" name="team[heroes][][bio]" id="member3_bio"></p>
+    <p><input type="submit" value="submit">
+
+    <% if false %>
+
+    fill_in("team[name]", :with => "Team Ruby")
+    fill_in("team[motto]", :with => "We love Ruby!")
+    fill_in("member1_name", :with => "Amanda")
+    fill_in("member1_power", :with => "Ruby")
+    fill_in("member1_bio", :with => "I love Ruby!")
+    fill_in("member2_name", :with => "Arel")
+    fill_in("member2_power", :with => "JavaScript")
+    fill_in("member2_bio", :with => "I love JavaScript!")
+    fill_in("member3_name", :with => "Katie")
+    fill_in("member3_power", :with => "Sinatra")
+    fill_in("member3_bio", :with => "I love Sinatra!")
+    click_button 'submit'
+
+
+<-- {team => {
+    team_name => name,
+    team_motto => motto,
+    heroes [ 
+            {
+            name => name, 
+            power => power, 
+            bio => bio,
+            },
+            {
+            name => name, 
+            power => power, 
+            bio => bio,
+            },
+            {
+            name => name, 
+            power => power, 
+            bio => bio,
+            }
+        ]
+    }
+} -->
+
+<% end %>
