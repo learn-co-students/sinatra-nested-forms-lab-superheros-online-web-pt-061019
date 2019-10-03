@@ -1,10 +1,10 @@
 class Team 
-    attr_accessor :team_name, :motto
+    attr_accessor :name, :motto
 
     TEAM = []
 
     def initialize(params)
-        @team_name = params[:team_name]
+        @team_name = params[:name]
         @motto = params[:motto]
 
         TEAM << self 
